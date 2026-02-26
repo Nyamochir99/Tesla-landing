@@ -3,9 +3,7 @@ body {
   font-family: Inter;
   width: 100vw;
   position: absolute;
-  background-image: url(./images/1.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
+  background-color: white;
 }
 .header {
   display: flex;
@@ -17,6 +15,7 @@ body {
   top: 0;
   width: calc(100% - 64px);
   background-color: white;
+  z-index: 2;
 }
 .logo {
   display: flex;
@@ -24,6 +23,7 @@ body {
   justify-content: center;
   margin: 0 16px;
   color: rgb(23, 26, 32);
+  z-index: 2;
 }
 .midle {
   display: flex;
@@ -37,6 +37,7 @@ body {
   font-size: 14px;
   font-weight: 500;
   line-height: 20px;
+  z-index: 2;
 }
 .mid-txt:hover {
   border: 1px solid none;
@@ -47,6 +48,7 @@ body {
   display: flex;
   gap: 4px;
   margin-right: 16px;
+  z-index: 2;
 }
 .icon {
   width: 32px;
@@ -62,8 +64,9 @@ body {
   background-color: rgba(23, 26, 32, 0.05);
 }
 .header-hover {
-  display: none;
-  /* transform: translateY(-100px); */
+  opacity: 0;
+  background-color: white;
+  transform: translateY(-100px);
   width: 100%;
   height: 484px;
   display: flex;
@@ -74,8 +77,10 @@ body {
   align-items: flex-start;
   position: fixed;
   top: 0;
-  z-index: -1;
-  box-shadow: 0 30px 30px -5px rgba(0, 0, 0, 0.03);
+  left: 0;
+  z-index: 1;
+  transition: 0.5s ease;
+  box-shadow: 0 30px 30px rgba(0, 0, 0, 0.03);
 }
 .hover-left {
   display: grid;
@@ -126,7 +131,8 @@ body {
   height: 484px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  margin-top: 12px;
   align-items: flex-start;
   gap: 12px;
   color: rgb(23, 26, 32);
@@ -144,9 +150,47 @@ body {
   background: rgba(0, 0, 0, 0.05);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  /* display: none; */
+  z-index: -1;
+  transition: 1s ease;
 }
 #txt1:hover ~ #hover1 {
-  display: block;
-  /* transform: translateY(0); */
+  opacity: 1;
+  transform: translateY(0);
+}
+#txt2:hover ~ #hover2 {
+  opacity: 1;
+  transform: translateY(0);
+}
+#txt3:hover ~ #hover3 {
+  opacity: 1;
+  transform: translateY(0);
+}
+#txt4:hover ~ #hover4 {
+  opacity: 1;
+  transform: translateY(0);
+}
+#txt5:hover ~ #hover5 {
+  opacity: 1;
+  transform: translateY(0);
+}
+#txt1:hover ~ .overlay {
+    display: block;
+}
+#txt2:hover ~ .overlay {
+    display: block;
+}
+#txt3:hover ~ .overlay {
+    display: block;
+}
+#txt4:hover ~ .overlay {
+    display: block;
+}
+#txt5:hover ~ .overlay {
+    display: block;
+}
+.hov-2 {
+  height: 228px;
+}
+.hov-3 {
+  height: 395px;
 }
